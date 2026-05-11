@@ -16,13 +16,13 @@ bool alphaNumCheck(char c) {
 
 bool isNumber(char* str) {
     int i = 0;
-    if (str[i] == '-' || str[i] == '+') i++; // optional sign
-    if (str[i] == '\0') return false;         // just a sign is not a number
+    if (str[i] == '-' || str[i] == '+') i++; 
+    if (str[i] == '\0') return false;         
 
     bool hasDigit = false;
-    while (numCheck(str[i])) { hasDigit = true; i++; } // integer part
+    while (numCheck(str[i])) { hasDigit = true; i++; } 
 
-    if (str[i] == '.') {                      // optional decimal part
+    if (str[i] == '.') {                      
         i++;
         while (numCheck(str[i])) { hasDigit = true; i++; }
     }
