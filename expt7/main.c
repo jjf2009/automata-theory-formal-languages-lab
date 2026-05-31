@@ -1,21 +1,4 @@
-/*
- * Pushdown Automaton (PDA) Simulator
- * Matches DFA lab format: tuple display + Instantaneous Description (ID) trace
- *
- * PDA Tuple: M = (Q, Σ, Γ, δ, q0, Z0, F)
- *   Q   = set of states
- *   Σ   = input alphabet
- *   Γ   = stack alphabet
- *   δ   = transition function  δ(state, input_symbol, stack_top) → (next_state, push_string)
- *   q0  = start state
- *   Z0  = initial stack symbol
- *   F   = set of final/accepting states
- *
- * Acceptance: by final state (stack contents don't matter at acceptance)
- *
- * ID format:  (current_state, remaining_input, stack_contents)
- *   e.g.     (q0, aabb, Z0) ⊢ (q1, abb, AZ0) ⊢ ...
- */
+
 
 #include <stdio.h>
 #include <stdlib.h>

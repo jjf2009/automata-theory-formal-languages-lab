@@ -2,11 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h> 
-#include <locale.h>
 
 int main() {
-    
-    setlocale(LC_ALL, ""); 
     int numStates, numSymbols, numFinalStates;
     int startState;
     int* finalStates;
@@ -190,7 +187,7 @@ int main() {
         }
     }
 
-    // Free memory
+
     free(alphabet);
     free(finalStates);
     for(int i = 0; i < numStates; i++){
