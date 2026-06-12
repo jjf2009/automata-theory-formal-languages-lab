@@ -118,15 +118,12 @@ int main()
     return 0;
 }
 
-// Number of states: 3
-// Number of symbols: 2
-// Enter symbols: ab
-
-// Number of transitions: 4
-
+// 3
+// 2
+// ab
+// 4
 // 0 a 0
 // 0 a 1
 // 0 b 0
 // 1 b 2
-
-// Start state: 0
+// 0
