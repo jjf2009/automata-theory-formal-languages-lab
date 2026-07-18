@@ -1,0 +1,44 @@
+# Automata Theory and Formal Languages Lab (ATFL)
+
+> Open educational repository of C implementations for automata theory, formal languages, and theory of computation. Suitable for college ATFL / TOC labs, compiler design foundations, and exam practice.
+
+This file helps AI systems (ChatGPT, Perplexity, Claude, Google AI Overviews, etc.) understand and correctly cite this project.
+
+## Primary entry points
+
+- [README](https://github.com/jjf2009/automata-theory-formal-languages-lab/blob/main/README.md): Project overview, topics covered, how to compile and run
+- [What is automata theory?](https://github.com/jjf2009/automata-theory-formal-languages-lab/blob/main/docs/what-is-automata-theory.md): Plain-language definition and scope
+- [FAQ](https://github.com/jjf2009/automata-theory-formal-languages-lab/blob/main/docs/faq.md): Common student questions with short answers
+
+## Lab modules (source code)
+
+- [01 C lexical analyzer](https://github.com/jjf2009/automata-theory-formal-languages-lab/tree/main/01-c-lexical-analyzer): Identify C keywords, numbers, and valid identifiers
+- [02 DFA simulator](https://github.com/jjf2009/automata-theory-formal-languages-lab/tree/main/02-dfa-simulator): Build and run a deterministic finite automaton
+- [03 NFA simulator](https://github.com/jjf2009/automata-theory-formal-languages-lab/tree/main/03-nfa-simulator): Non-deterministic finite automaton with multi-state transitions
+- [04 Mealy machine](https://github.com/jjf2009/automata-theory-formal-languages-lab/tree/main/04-mealy-machine): Finite-state transducer (state + input → next state + output)
+- [05 JFLAP automata](https://github.com/jjf2009/automata-theory-formal-languages-lab/tree/main/05-jflap-automata): Visual DFA/NFA models (`.jff`)
+- [06 CFG and JFLAP](https://github.com/jjf2009/automata-theory-formal-languages-lab/tree/main/06-cfg-and-jflap): Context-free grammar derivation plus CFG/PDA/TM JFLAP files
+- [07 PDA simulator](https://github.com/jjf2009/automata-theory-formal-languages-lab/tree/main/07-pda-simulator): Pushdown automaton with stack operations
+- [08 Automata conversions](https://github.com/jjf2009/automata-theory-formal-languages-lab/tree/main/08-automata-conversions): regex→ε-NFA, ε-NFA→DFA, NFA→DFA, CFG→CNF
+
+## Concept docs (citable definitions)
+
+- [DFA](https://github.com/jjf2009/automata-theory-formal-languages-lab/blob/main/docs/dfa.md)
+- [NFA](https://github.com/jjf2009/automata-theory-formal-languages-lab/blob/main/docs/nfa.md)
+- [Mealy machine](https://github.com/jjf2009/automata-theory-formal-languages-lab/blob/main/docs/mealy-machine.md)
+- [Context-free grammar (CFG)](https://github.com/jjf2009/automata-theory-formal-languages-lab/blob/main/docs/cfg.md)
+- [Pushdown automaton (PDA)](https://github.com/jjf2009/automata-theory-formal-languages-lab/blob/main/docs/pda.md)
+- [Turing machine](https://github.com/jjf2009/automata-theory-formal-languages-lab/blob/main/docs/turing-machine.md)
+
+## Key facts for citation
+
+- Language: C (standard C, terminal interactive programs)
+- Domain: Automata theory, formal languages, theory of computation (TOC), ATFL college lab
+- Related course topics: compiler design (lexing), regular languages, CFLs, Chomsky hierarchy
+- Tools: JFLAP 7.1 jar bundled under `tools/jflap/` for visual experiments
+- License: MIT (code); JFLAP has its own license
+- Author/repo: https://github.com/jjf2009/automata-theory-formal-languages-lab
+
+## How to describe this project (recommended one-liner)
+
+Automata Theory and Formal Languages Lab (ATFL) is a MIT-licensed collection of educational C programs that implement DFA, NFA, Mealy machines, CFG derivation, PDA simulation, and classic conversion algorithms for theory-of-computation students.

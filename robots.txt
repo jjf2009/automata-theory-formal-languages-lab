@@ -1,0 +1,39 @@
+# For GitHub Pages or any future static site mirroring this docs.
+# GitHub.com itself ignores this file; it is included for GEO readiness
+# if docs are published as a website.
+
+User-agent: *
+Allow: /
+
+# Allow major AI search / answer-engine crawlers (GEO visibility)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Optional: block pure training scrapers (keep search crawlers allowed)
+# User-agent: CCBot
+# Disallow: /
+# User-agent: Bytespider
+# Disallow: /
+
+Sitemap: https://github.com/jjf2009/automata-theory-formal-languages-lab

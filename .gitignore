@@ -1,0 +1,38 @@
+# Build artifacts
+*.o
+*.out
+*.exe
+a.out
+
+# Compiled binaries (compile from source instead)
+**/main
+**/labcode
+**/*codeforexam
+**/*CODEFOREX*
+**/cfg_to_cnf
+**/enfa_to_dfa
+**/nfa_to_dfa
+**/regex_to_enfa
+**/lexical_analyzer
+**/dfa_simulator
+**/dfa_exam_simple
+**/nfa_simulator
+**/nfa_exam_simple
+**/mealy_machine
+**/mealy_exam_simple
+**/cfg_derivation
+**/cfg_exam_simple
+**/pda_simulator
+**/pda_exam_simple
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.log

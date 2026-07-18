@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this repository for learning or teaching, please cite it."
+title: "Automata Theory and Formal Languages Lab (ATFL) — C Implementations"
+type: software
+authors:
+  - name: "jjf2009"
+    alias: "jjf2009"
+repository-code: "https://github.com/jjf2009/automata-theory-formal-languages-lab"
+url: "https://github.com/jjf2009/automata-theory-formal-languages-lab"
+abstract: >-
+  Educational C implementations of automata theory and formal languages:
+  lexical analysis, DFA/NFA simulators, Mealy machines, context-free grammar
+  derivation, pushdown automata, and conversion algorithms (regex→ε-NFA,
+  NFA→DFA, ε-NFA→DFA, CFG→CNF). Includes JFLAP models for visual learning.
+keywords:
+  - automata theory
+  - formal languages
+  - DFA
+  - NFA
+  - pushdown automata
+  - context-free grammar
+  - Mealy machine
+  - Turing machine
+  - theory of computation
+  - compiler design
+  - C programming
+  - JFLAP
+  - ATFL lab
+license: MIT
+version: "1.0.0"
+date-released: "2026-07-18"
