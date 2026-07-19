@@ -1,102 +1,77 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX 20
+struct Rule {
+    int from; char in; char pop;
+    int to; char push[10];
+};
 
-typedef struct
-{
-    int from;
-    char input;
-    char stackTop;
-    int to;
-    char push[10];
-} Transition;
+int main() {
+    int num_rules, num_finals, start_state;
+    struct Rule rules[50];
+    int finals[20];
+    char input[100], stack[100], init_stack;
+    int top = -1;
 
-Transition t[MAX];
+    // 1. Setup
+    printf("Enter Start State, Num Final States, and Initial Stack Symbol (e.g., 0 1 Z): ");
+    scanf("%d %d %c", &start_state, &num_finals, &init_stack);
 
-int main()
-{
-    int states, transitions;
-    int startState;
-    int finalState;
+    printf("Enter the final states: ");
+    for(int i=0; i<num_finals; i++) scanf("%d", &finals[i]);
 
-    printf("Enter number of transitions: ");
-    scanf("%d", &transitions);
+    printf("Enter number of rules: ");
+    scanf("%d", &num_rules);
 
-    printf("Enter start state: ");
-    scanf("%d", &startState);
-
-    printf("Enter final state: ");
-    scanf("%d", &finalState);
-
-    printf("\nEnter transitions:\n");
-    printf("from input stackTop to push\n");
-
-    for(int i=0;i<transitions;i++)
-    {
-        scanf("%d %c %c %d %s",
-              &t[i].from,
-              &t[i].input,
-              &t[i].stackTop,
-              &t[i].to,
-              t[i].push);
+    printf("Format: FromState Input StackTop ToState Push (use $ for empty)\n");
+    for(int i = 0; i < num_rules; i++) {
+        printf("Rule %d: ", i + 1);
+        scanf("%d %c %c %d %s", &rules[i].from, &rules[i].in, &rules[i].pop, &rules[i].to, rules[i].push);
     }
 
-    char str[100];
+    // 2. Processing
+    printf("\nEnter string to test: ");
+    scanf("%s", input);
 
-    printf("Enter string: ");
-    scanf("%s", str);
+    int curr = start_state;
+    int i = 0;
+    stack[++top] = init_stack;
 
-    char stack[100];
-    int top = 0;
-
-    stack[top] = 'Z';      // Initial stack symbol
-
-    int currentState = startState;
-    int pos = 0;
-
-    while(str[pos] != '\0')
-    {
-        char input = str[pos];
-        char stk = stack[top];
-
-        int found = 0;
-
-        for(int i=0;i<transitions;i++)
-        {
-            if(t[i].from == currentState &&
-               t[i].input == input &&
-               t[i].stackTop == stk)
-            {
-                top--; // pop
-
-                if(strcmp(t[i].push,"$") != 0)
-                {
-                    int len = strlen(t[i].push);
-
-                    for(int j=len-1;j>=0;j--)
-                        stack[++top] = t[i].push[j];
-                }
-
-                currentState = t[i].to;
-                pos++;
-                found = 1;
-
-                break;
+    while(i <= strlen(input)) {
+        char curr_in = (i < strlen(input)) ? input[i] : '$';
+        char curr_top = (top >= 0) ? stack[top] : '$';
+        int found = -1;
+        
+        for(int r = 0; r < num_rules; r++) {
+            if(rules[r].from == curr && rules[r].pop == curr_top) {
+                if(rules[r].in == curr_in) { found = r; break; } 
+                if(rules[r].in == '$') { found = r; }            
             }
         }
 
-        if(!found)
-        {
-            printf("REJECTED\n");
-            return 0;
+        if(found == -1) break; 
+
+        top--; 
+        if(strcmp(rules[found].push, "$") != 0) {
+            for(int p = strlen(rules[found].push) - 1; p >= 0; p--) {
+                stack[++top] = rules[found].push[p];
+            }
+        }
+        
+        curr = rules[found].to;
+        if(rules[found].in != '$') i++; 
+    }
+
+    // 3. Acceptance Check
+    int accepted = 0;
+    if(i == strlen(input)) {
+        for(int f = 0; f < num_finals; f++) {
+            if(curr == finals[f]) accepted = 1;
         }
     }
 
-    if(currentState == finalState)
-        printf("ACCEPTED\n");
-    else
-        printf("REJECTED\n");
+    if(accepted) printf("\nString ACCEPTED!\n");
+    else printf("\nString REJECTED!\n");
 
     return 0;
 }
